@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-//주석 한국어로 달 것
+//주석 한국어로 달 것(인라인 제안 주석을 중국어로 적길래 적었습니다.)
 public class GoStone : MonoBehaviour, IPointerClickHandler
 {
     public bool isPlaced = false;
