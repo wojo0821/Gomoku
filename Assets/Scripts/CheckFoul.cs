@@ -46,7 +46,6 @@ public class CheckFoul : MonoBehaviour
                 count++;
             }
         }
-        Debug.Log("방향: " + dx + "," + dy + " 돌 개수: " + count);
         for (int i = -3; i <= 3; i++)
         {
             if (blackStones.Contains(new Vector2Int(index.x + i * dx, index.y + i * dy))) //검은색돌 체크
@@ -54,19 +53,16 @@ public class CheckFoul : MonoBehaviour
                 if (whiteStones.Contains(new Vector2Int(index.x + (i - 1) * dx, index.y + (i - 1) * dy)) && count < 3 ||
                     whiteStones.Contains(new Vector2Int(index.x + (i + 1) * dx, index.y + (i + 1) * dy)) && count < 3)
                 {
-                    Debug.Log("양옆에 흰돌 방향: " + dx + "," + dy);
                     return -1; // 검은색돌 양옆에 흰색돌 체크 (막힘)
                 }
             }
         }
         if (blackStones.Contains(new Vector2Int(index.x - 4 * dx, index.y - 4 * dy)) && count == 3)
         {
-            Debug.Log("5돌 체크");
             return -1;
         }
         if (blackStones.Contains(new Vector2Int(index.x + 4 * dx, index.y + 4 * dy)) && count == 3)
         {
-            Debug.Log("5돌 체크");
             return -1;
         }
         return count;
