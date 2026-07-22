@@ -88,10 +88,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f265dd27e658544e9d34d162926d432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoStone
-  stoneManager: {fileID: 0}
-  inde: []
+  audioSource: {fileID: 0}
+  stoneSound: {fileID: 8300000, guid: edb65c248e063b048a0333e296c64664, type: 3}
   isPlaced: 0
-  isWhite: 0
   stoneIndex: {x: 0, y: 0}
   whiteStone: {fileID: -551754180944627285, guid: c8c6a7cbcbfb1e24abb2368d0e8ba2a2, type: 3}
   blackStone: {fileID: -6147430346511379185, guid: 30642fee7cb349146a5bb889496c2f48, type: 3}

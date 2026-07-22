@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
@@ -6,6 +7,9 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance = null;
     public bool isWhiteTurn = false;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip stoneSound;
+    private Coroutine soundCoroutine;
     private void Awake()
     {
         if (instance == null)
@@ -31,5 +35,20 @@ public class GameManager : MonoBehaviour
     public bool CheckFoul(Vector2Int index)
     {
         return stoneManager.CheckFoulMethode(index);
+    }
+    public void StoneSoundPlay(float startTime, float endTime)
+    {
+        soundCoroutine = StartCoroutine(CoStoneSoundPlay(startTime, endTime));
+    }
+    private IEnumerator CoStoneSoundPlay(float startTime, float endTime)
+    {
+        audioSource.Stop();
+
+        audioSource.clip = stoneSound;
+        audioSource.time = startTime;
+        audioSource.Play();
+
+        yield return new WaitForSeconds(endTime - startTime);
+        audioSource.Stop();
     }
 }
