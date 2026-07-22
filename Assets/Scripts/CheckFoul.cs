@@ -24,6 +24,7 @@ public class CheckFoul : MonoBehaviour
         if (threeCount >= 2)
         {
             Debug.Log("Black is 33");
+            GameManager.instance.ChangeText("Black is 33");
             return true;
         }
 
@@ -31,6 +32,7 @@ public class CheckFoul : MonoBehaviour
         if (fourCount >= 2)
         {
             Debug.Log("Black is 44");
+            GameManager.instance.ChangeText("Black is 44");
             return true;
         }
 
@@ -38,6 +40,7 @@ public class CheckFoul : MonoBehaviour
         if (sixCount >= 1)
         {
             Debug.Log("Black is 6");
+            GameManager.instance.ChangeText("Black is 6");
             return true;
         }
 

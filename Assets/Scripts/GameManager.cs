@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     public bool isWhiteTurn = false;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip stoneSound;
+    [SerializeField] TextMeshProUGUI Text;
     private Coroutine soundCoroutine;
     private void Awake()
     {
@@ -21,6 +23,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+    public void ChangeText(string text)
+    {
+        Text.text = text;
     }
 
     public void ChangeTurn()

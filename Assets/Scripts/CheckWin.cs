@@ -12,7 +12,11 @@ public class CheckWin : MonoBehaviour
             for (int i = 0; i < 4; i++)
             {
                 int count = GetLineCount(index, dx[i], dy[i], stoneList);
-                if (count >= 5) Debug.Log("White Wins");
+                if (count >= 5)
+                {
+                    Debug.Log("White Wins");
+                    GameManager.instance.ChangeText("White Wins");
+                }
             }
         }
         else if (!isWhiteTurn)
@@ -20,7 +24,11 @@ public class CheckWin : MonoBehaviour
             for (int i = 0; i < 4; i++)
             {
                 int count = GetLineCount(index, dx[i], dy[i], stoneList);
-                if (count == 5) Debug.Log("Black Wins");
+                if (count == 5)
+                {
+                    Debug.Log("Black Wins");
+                    GameManager.instance.ChangeText("Black Wins");
+                }
             }
         }
     }
